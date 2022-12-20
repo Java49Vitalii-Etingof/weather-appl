@@ -8,8 +8,9 @@ export class DataForm {
     #errorMessageElem
     //......
     constructor (params) {
-        //TODO
-    }
+        this.#formElement = document.getElementById(params.idForm);
+        this.#dateFromInputElement = document.getElementById(params.idDateFromInput);
+    }   this.#dateToInputElement = document.getElementById(params.idDateToInput);
     addHandler(processFun) {
         //TODO
     }
