@@ -82,13 +82,7 @@ export class DataForm {
         if (hour < 0 || hour > 23) {
             showErrorMessage(event.target, "hour-from must be in range [0-23]"
                 , this.#errorMessageElem);
-
-
-        } else if (this.#dateFrom != this.#dateTo) {
-            this.#hourFrom = hour;
-            this.#hourTo = this.#hourToElement.value;
-        }
-        else {
+        } else {
             if (event.target == this.#hourFromElement) {
                 if (this.#hourTo && this.#hourTo < hour) {
                     showErrorMessage(this.#hourFromElement, "hour-from must be less or equal hour-to"
