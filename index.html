@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <link rel="stylesheet" href="styles/weather.css">
+    <link rel="shortcut icon" href="images/weather.png" type="image/x-icon">
 </head>
-<body>
-    <input type="date" min="2022-12-19" max="2023-01-03">
+
+<body>  
+    <section>
+        <form id="data_form" class="form-class">
+            <div class="one-input">
+                <select name="city" required>
+                    <option value hidden selected disabled>
+                        --Select City--
+                    </option>
+                    
+                </select>
+            </div>
+            <div class="two-inputs">
+                <div class="date-label">
+                    <label>Enter Date-From</label>
+                    <input type="date" name="dateFrom" required id="date_from" >
+                </div>
+                <div class="date-label">
+                    <label>Enter Date-To</label>
+                    <input type="date" name="dateTo" required id="date_to" >
+                </div>
+            </div>
+            <div class="two-inputs">
+                <input type="number" name="hourFrom" required id="hour_from" placeholder="enter hour-from">
+                <input type="number" name="hourTo" required id="hour_to" placeholder="enter hour-to">
+            </div>
+            <p id="error_message" class="error"></p>
+            <div class="buttons">
+                <button type="get temperature values">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+            <header>
+                <h2 id="city" class="city-title"></h2>
+            </header>
+            <ul id="items-list" class="items-list">
+
+            </ul>
+
+        </form>
+    </section>
+   
     <script src="src/main.js" type="module"></script>
 </body>
+
 </html>
