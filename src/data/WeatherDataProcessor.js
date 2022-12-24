@@ -29,14 +29,16 @@ export class WeatherDataProcessor {
     processData(data, requestObject) {
         const times = data.hourly.time;
         const temperatures = data.hourly.temperature_2m;
+        const indexFrom = getIndexOfDate(times, requestObject.dateFrom);
+        const indexTo = getIndexOfDate(times, requestObject.dateTo) + 24;
         const timesSelectedDatesHours = times.filter((__, index) => {
-            const hour = index % 24;
-            return hour >= requestObject.hourFrom && hour <= requestObject.hourTo;
+            index = index % 24;
+            return index >= requestObject.hourFrom && index <= requestObject.hourTo;
         })
 
         const temperaturesDatesHours = temperatures.filter((__, index) => {
-            const hour = index % 24;
-            return hour >= requestObject.hourFrom && index <= requestObject.hourTo;
+            index = index % 24;
+            return index >= requestObject.hourFrom && index <= requestObject.hourTo;
         })
         const objects = timesSelectedDatesHours.map((dt, index) => {
             const dateTime = dt.split("T");
@@ -55,4 +57,8 @@ export class WeatherDataProcessor {
         return 17;
     }
 
+}
+function getIndexOfDate(times, date) {
+
+    return times.findIndex(t => t.includes(date));
 }
