@@ -6,9 +6,9 @@ export class TemperaturesList {
         this.#listElement = document.getElementById(idList);
     }
     showTemperatures(dataArray) {
-             this.#cityElement.innerHTML = dataArray.city;
-             this.#listElement.innerHTML = getListItems(dataArray.objects)
-              
+        this.#cityElement.innerHTML = dataArray.city;
+        this.#listElement.innerHTML = getListItems(dataArray.objects)
+
     }
 }
 function getListItems(data) {

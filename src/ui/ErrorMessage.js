@@ -5,7 +5,7 @@ export function showErrorMessage(element, message, errorElement) {
     errorElement.innerHTML = message;
     setTimeout(() => {
         element.classList.remove(ERROR_CLASS);
-        element.value = ''; 
+        element.value = '';
         errorElement.innerHTML = '';
     }, TIME_OUT_ERROR_MESSAGE);
 }
