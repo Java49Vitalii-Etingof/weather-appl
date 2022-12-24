@@ -29,7 +29,8 @@ export class WeatherDataProcessor {
     processData(data, requestObject) {
             const times = data.hourly.time;
             const temperatures = data.hourly.temperature_2m;
-            
+           // const indexFrom = getIndexOfDate(times, requestObject.dateFrom);
+          //  const indexTo = getIndexOfDate(times, requestObject.dateTo) + 24;
             const timesSelectedDatesHours = times.filter((__,index) =>
             {
                 const hour = index % 24;
@@ -57,5 +58,9 @@ export class WeatherDataProcessor {
         getPeriodInDays() {
             return 17;
         }
-    
+
 }
+// function getIndexOfDate(times, date) {
+    
+//     return times.findIndex(t => t.includes(date));
+// }

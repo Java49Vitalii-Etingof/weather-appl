@@ -26,12 +26,13 @@ export class DataForm {
        this.#hourToElement = document.getElementById(params.idHourTo);
        this.#errorMessageElem = document.getElementById(params.idErrorMessage);
        this.#selectCityElement = document.querySelector(params.citySelector);
-       this.#minDate = params.minMaxDate.minDate;
-       this.#maxDate = params.minMaxDate.maxDate;
+       this.#minDate = params.minMaxDates.minDate;
+       this.#maxDate = params.minMaxDates.maxDate;
        this.#cities = params.cities;
-       this.citiesHtml();
+       
        this.onChangeDate();
        this.onChangeHours();
+       this.citiesHtml();
 
     }
     addHandler(processFun) {
